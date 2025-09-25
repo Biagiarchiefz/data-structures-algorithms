@@ -6,8 +6,6 @@ public class SearchingAlgorithms {
 
         int[] nums = {2, 3, 8, 9 ,12};
 
-        int[] test = new int[10];
-
         int target = 9;
 
         int result1 = linearSearch( nums, target );
@@ -21,7 +19,7 @@ public class SearchingAlgorithms {
 
     }
 
-
+    // cek setiap satu satu elemen yang ada di dalam array, kalau ketemu sesuai dengan target redun indexnya
     public static int linearSearch( int[] nums, int target ) {
 
         for ( int i = 0; i < nums.length; i++ ) {
@@ -33,6 +31,7 @@ public class SearchingAlgorithms {
         return -1;
     }
 
+    // iterasi dimulai dari index tengah
     public static int binarySearch( int[] nums, int target, int left, int right ) {
         // 2, 3, 8, 9 ,12
 //        int left = 0;
@@ -47,7 +46,7 @@ public class SearchingAlgorithms {
             } else if (nums[mid] < target) {
                 return binarySearch(nums, target, mid + 1, right);   // recursi fungsing
             } else {
-                return binarySearch(nums, target, left, mid -1 );
+                return binarySearch(nums, target, left, mid - 1 );
             }
 
         }
